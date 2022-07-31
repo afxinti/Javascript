@@ -1,3 +1,19 @@
+//codewars challenge find the ones in binary conversion of a number
+//serching for number of ones in binary conversion
+var countBits = function(n) {
+    let numberOfOnes=0;
+    //as long as n is smaller than one need to continue itterations
+    while (n>=1){
+      // existance of one is corellated with the remainder when dividing with 2
+      if(!(n%2 === 0)){
+        numberOfOnes +=1 ;
+        n = (n/2)-0.5;
+      } else {n=n/2}
+    }
+    return numberOfOnes
+  };
+
+
 // Two teams and 3 games
 
 const dolphins = [97, 112, 101];
