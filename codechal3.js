@@ -1,3 +1,26 @@
+// codewars challenge for finding the sum of n nunmber until is one digit
+function digitalRoot(n) {
+    // use modulo to take the last digit
+    function breakToDigits(x){
+        let sum = 0;
+        while (x>0) {
+          sum = sum + (x%10);
+          x = (x-x%10)/10
+          if (x<10){
+            sum = sum + x;
+            x=0}
+        }
+        return sum
+      }
+    let answer = breakToDigits(n);
+    //another loop in case the sum of the digits is bigger than 9 a lot of times
+    while (answer>9){
+        answer = breakToDigits(answer)
+    }
+    return answer
+  }
+
+  
 //codewars challenge find the ones in binary conversion of a number
 //serching for number of ones in binary conversion
 var countBits = function(n) {
@@ -12,7 +35,8 @@ var countBits = function(n) {
     }
     return numberOfOnes
   };
-
+  //n.toString(2) method converts n into a binary string.
+  //CLEVER dry way!!!: countBits = n => n.toString(2).split('0').join('').length;
 
 // Two teams and 3 games
 
