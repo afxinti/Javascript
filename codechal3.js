@@ -1,34 +1,78 @@
 //codewars encode a string with the method of using the Rail Fence Cipher. 
 // This cipher is used to encode a string by placing each character successively in a diagonal along a set of "rails
 function encodeRailFenceCipher(string, numberRails) {
-    const letters = string.split("");
-    const str= letters.length;
-    const n = numberRails + (numberRails-2); //number of distance beetween letters in first and last rail
-    let distance = n // is used to count the distance between letters in each rail
-    let encoded = new Array (str);
-    let j = 0;
-    let k=0 //is used for index of encoded
-    // fills the encoded array with all the letters but the last line
-    // i represents the row and j the column if you think of the encoded string as a matrix of two dimentions
-    for (let i=0; i<numberRails-1; i++){
-      j=i;
-      while (j< str){
-          encoded[k] = letters[j];
-          k = k+1;
-          j = j+distance;
-      }
-      distance = distance - 2;
-    }
-    // fills the letters of last line 
-    for (let i=numberRails-1; i<str;){
-        encoded[k]=letters[i];
-        if (k<str-1){
-            k = k+1;
-          }
-        i = i+n;
-    }
-    return encoded.join("")
+  if (numberRails ===1){
+    return string
   }
+  const letters = string.split("");
+  const str= letters.length;
+  let encoded = new Array (str);
+  let j = 0;
+  let k=0 //is used for index of encoded
+  // i represents the row and j the column if the encoded string is a matrix of two dimentions
+  for (let i=0; i<numberRails; i++){
+    j=i;
+    let l=1;
+    while (j< str){
+        encoded[k] = letters[j];
+        if (k<str-1){
+          k = k+1;
+        }
+        if (i=== 0 || i === numberRails-1){
+          j = j +(numberRails-1)*2; //distance beetween letters in first and last rail
+        } else {
+          // l binary determines if you're down or up
+          if (l=1){
+            j = j + (numberRails-i-1)*2; // down defferent distance
+            l= 0
+          }else {
+            j = j + i*2;
+            l= 1
+          }
+        }
+    }
+  }
+  
+  return encoded.join("")
+}
+
+// to decode we need to take each letter of the string and put it in correct order
+// for first letters the i+n, then i+n-2 
+function decodeRailFenceCipher(string, numberRails) {
+  if (numberRails ===1){
+    return string
+  }
+  const letters = string.split("");
+  const str = letters.length;
+  let decoded = new Array(str);
+  let counter = 0;
+  let j = 0;
+  //loops through letters and sets the corect order in decoded
+  for (let i= 0; i<numberRails; i++){
+    j=i;
+    let l=1;
+    while (j<str){
+      decoded [j] = letters[counter];
+      if (counter< str-1){
+      counter = counter +1;
+        }
+      if (i=== 0 || i === numberRails-1){
+          j = j +(numberRails-1)*2; //distance beetween letters in first and last rail
+        } else {
+          // l binary determines if you're down or up
+          if (l=1){
+            j = j + (numberRails-i-1)*2; // down defferent distance
+            l= 0
+          }else {
+            j = j + i*2;
+            l= 1
+          }
+        }
+      } 
+    }
+
+  return decoded.join("")
+}
   
 
 
