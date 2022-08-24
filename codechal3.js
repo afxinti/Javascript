@@ -156,13 +156,15 @@
 // exercise3  Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
 //create array bills with 125,555 and 44 , create a tip array calculating the tips
 
-function calcTip (bill) {
-  if (bill > 50 & bill < 300 ) {
-    return bill * 0.15
-  } else {
-    return bill * 0.2
-  }
-}
+const calcTip = function  (bill) {
+  return bill > 50 && bill < 300 ? bill * 0.15 : bill * 0.2}
+ // other way
+//   if (bill > 50 && bill < 300 ) {
+//     return bill * 0.15
+//   } else {
+//     return bill * 0.2
+//   }
+// }
 let tips = [];
 let total = [];
 const bills = [125, 555, 44];
