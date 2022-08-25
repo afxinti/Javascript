@@ -153,26 +153,65 @@
 //     if (max >= 100) a = true;
 //     return a;
 // }
+//codechal 3 fund-par2 
+//Mark and John comparing their BMIs For each create an object with name, mass,height (Mark Miller and John Smith) and method calcBMI,
+//check who's BMI is greater
+
+const  mark = {
+  fullName: 'Mark Miller',
+  mass: 78 ,
+  height: 1.69,
+  calcBMI: function (){
+    this.bmi = this.mass / this.height**2;
+    return this.bmi;
+  }
+}
+const  john = {
+  fullName: 'John Smith',
+  mass: 92 ,
+  height: 1.95,
+  calcBMI: function (){
+    this.bmi = this.mass / this.height**2;
+    return this.bmi;
+  }
+}
+const a = mark.calcBMI() > john.calcBMI() ? mark : john;
+const b = a === mark? john : mark;
+console.log (`${a.fullName}'s  BMI (${a.bmi} is heigher than ${b.fullName}'s BMI (${b.bmi}))`)
+
+// //exercise 5
+// const xinti = {
+//   firstName: 'Afro',
+//   lastName: 'Xinti',
+//   birthYear: 1992,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven'],
+//   hasDriversLicense: true,
+//   data: function (){ 
+//     return `${this.firstName} is ${2022-this.birthYear} and has ${this.hasDriversLicense ? 'a':'no'} driver's licence;`
+//   }
+// }
+// console.log (xinti.data())
 // exercise3  Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
 //create array bills with 125,555 and 44 , create a tip array calculating the tips
 
-const calcTip = function  (bill) {
-  return bill > 50 && bill < 300 ? bill * 0.15 : bill * 0.2}
- // other way
-//   if (bill > 50 && bill < 300 ) {
-//     return bill * 0.15
-//   } else {
-//     return bill * 0.2
-//   }
+// const calcTip = function  (bill) {
+//   return bill > 50 && bill < 300 ? bill * 0.15 : bill * 0.2}
+//  // other way
+// //   if (bill > 50 && bill < 300 ) {
+// //     return bill * 0.15
+// //   } else {
+// //     return bill * 0.2
+// //   }
+// // }
+// let tips = [];
+// let total = [];
+// const bills = [125, 555, 44];
+// for (let i=0; i< bills.length; i++){
+//   tips.push(calcTip(bills[i]))
+//   total[i]= bills[i]+tips[i]
 // }
-let tips = [];
-let total = [];
-const bills = [125, 555, 44];
-for (let i=0; i< bills.length; i++){
-  tips.push(calcTip(bills[i]))
-  total[i]= bills[i]+tips[i]
-}
-console.log (tips, total)
+// console.log (tips, total)
 
 // // exercise: 2 teams compete 3 times A team only wins if it has at least double the average score
 // const avgScore = (sc1,sc2,sc3) => (sc1 + sc2 + sc3)/3;
