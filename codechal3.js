@@ -1,4 +1,5 @@
-// //codewars encode a string with the method of using the Rail Fence Cipher. 
+'use strict'; 
+//codewars encode a string with the method of using the Rail Fence Cipher. 
 // // This cipher is used to encode a string by placing each character successively in a diagonal along a set of "rails
 // function encodeRailFenceCipher(string, numberRails) {
 //   if (numberRails ===1){
@@ -213,12 +214,13 @@ for (let i=0; i< bills.length; i++){
 }
 console.log (tips, total)
  
-function calcArrayAvg (arr){
+function calcArrayAvg (ar){
   let sum = 0;
-  for (let i=0; i< arr.length; i++){
-    sum = sum + arr[i];
+  for (let i=0; i< ar.length; i++){
+    sum = sum + ar[i];
+    //sum += ar[i]; ALSO THIS
   }
-  return sum/(arr.length)
+  return sum/(ar.length)
 }
 
 
