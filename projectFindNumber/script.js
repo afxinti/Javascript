@@ -11,7 +11,7 @@ let message = document.querySelector('.distance').textContent;
 let guess = Number(document.querySelector('.guess').value);
 const check = document.querySelector('.check');
 const replay = document.querySelector('.replay');
-let score = 20;
+let score = 30;
 let highscore = 0;
 //check the lucky guess of player and give feedback
 check.addEventListener('click', function () {
@@ -37,7 +37,7 @@ replay.addEventListener('click', function () {
     if (highscore < score) {
       highscore = score;
     }
-    score = 20;
+    score = 30;
     document.querySelector('.highscore').textContent = +highscore;
   }
   document.querySelector('.number').textContent = '?';
