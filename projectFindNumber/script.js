@@ -32,11 +32,14 @@ check.addEventListener('click', function () {
 });
 
 replay.addEventListener('click', function () {
+  //check if replay was clicked before guessing, avoid highscore = 20 at start
+  if (winningNumber === guess) {
+    if (highscore < score) {
+      highscore = score;
+    }
+    score = 20;
+    document.querySelector('.highscore').textContent = +highscore;
+  }
   document.querySelector('.number').textContent = '?';
   winningNumber = calcLuckyNumber();
-  if (highscore < score) {
-    highscore = score;
-  }
-  score = 20;
-  document.querySelector('.highscore').textContent = +highscore;
 });
