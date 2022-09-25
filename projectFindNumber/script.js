@@ -32,6 +32,7 @@ check.addEventListener('click', function () {
 });
 
 replay.addEventListener('click', function () {
+  document.querySelector('.number').textContent = '?';
   winningNumber = calcLuckyNumber();
   if (highscore < score) {
     highscore = score;
