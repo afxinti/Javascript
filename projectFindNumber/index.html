@@ -4,7 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess Game</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <button class="btn replay">Replay</button>
+      <h1>Find the lucky number</h1>
+      <p>guess a number between 1 to 30</p>
+    </header>
+    <h2 class="number">?</h2>
+    <div class="container">
+      <section class="find">
+        <input type="number" min="0" class="guess" />
+        <button type="button" class="btn check">Check!!</button>
+      </section>
+      <section class="results">
+        <p class="distance">Type your guess</p>
+        <p>Score:<span class="score">30</span></p>
+        <p>Highscore:<span class="highscore"></span></p>
+      </section>
+    </div>
+    <footer>Af Xinti ©️</footer>
+    <script src="script.js"></script>
+  </body>
 </html>
