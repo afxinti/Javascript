@@ -1,5 +1,12 @@
 const colors = document.querySelector('h2').innerText;
-const color1 = document.querySelector('.color1').value;
-const color2 = document.querySelector('.color2').value;
+let color1 = document.querySelector('.color1');
+let color2 = document.querySelector('.color2');
+let body = document.getElementById('back');
 
-console.log(color1, color2, colors);
+function changeBackground() {
+  body.style.background = `linear-gradient(to right, ${color1.value},${color2.value} )`;
+}
+
+color1.addEventListener('input', changeBackground());
+
+color2.addEventListener('input', changeBackground());
