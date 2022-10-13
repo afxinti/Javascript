@@ -1,0 +1,8 @@
+* {
+  text-align: center;
+  font: 'Raleway', sans-serif;
+}
+body {
+  top: 15%;
+  background: linear-gradient(to right, #6e0f45, #8a5d13);
+}

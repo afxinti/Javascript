@@ -1,0 +1,21 @@
+* {
+  background-color: rgb(167, 153, 184);
+}
+a:visited {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(28, 27, 54);
+}
+a:hover {
+  color: rgb(198, 43, 226);
+}
+h1 {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+}
