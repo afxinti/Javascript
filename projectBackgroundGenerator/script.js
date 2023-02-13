@@ -7,7 +7,7 @@ let body = document.getElementById('back');
 function changeBackground() {
   console.log(color1,color2)
   body.style.background = `linear-gradient(to right, ${color1.value},${color2.value} )`;
-  colors.textContent = `Right: ${color1.value}, Left: ${color2.value}`;
+  colors.textContent = `Left: ${color1.value}, Right: ${color2.value}`;
 }
 
 color1.addEventListener('input', changeBackground);

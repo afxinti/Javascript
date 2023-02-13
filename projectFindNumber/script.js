@@ -13,6 +13,7 @@ const check = document.querySelector('.check');
 const replay = document.querySelector('.replay');
 let score = 30;
 let highscore = 0;
+
 //check the lucky guess of player and give feedback
 check.addEventListener('click', function () {
   guess = Number(document.querySelector('.guess').value);
