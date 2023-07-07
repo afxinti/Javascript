@@ -17,7 +17,11 @@ let highscore = 0;
 //check the lucky guess of player and give feedback
 check.addEventListener('click', function () {
   guess = Number(document.querySelector('.guess').value);
-  if (guess === winningNumber) {
+      
+  if (guess >30 || guess<  1) {
+    message = 'Hey! Wrong number! Input only 1 to 30'
+    score = score;
+  } else if (guess === winningNumber) {
     document.querySelector('.number').textContent = winningNumber;
     message = 'Well played, you found it!';
     score = score;
