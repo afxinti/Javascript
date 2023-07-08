@@ -25,8 +25,8 @@ console.log(printForecast(test2));
 // const temperatures = [4, 9, 2, 10, -3, -5, "error", 5, "404"];
 
 // const calcAmplitude = function (arrTemp) {
-//   let max = arrTemp[0];
-//   let min = arrTemp[0];
+//   let max = -10000;
+//   let min = 1000000;
 
 //   for (let i = 0; i < arrTemp.length; i++) {
 //     // create a variable not search 5 times in the array
